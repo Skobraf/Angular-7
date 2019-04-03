@@ -2,3 +2,6 @@
 <app-server></app-server>
 <app-server></app-server>
 <button [disabled]="!isEnable" (click)="handleClick()">Click Me</button>
+<p>{{targetElement}}</p>
+
+<input type="text" (input)="handleEvent($event)">
