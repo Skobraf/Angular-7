@@ -1,7 +1,5 @@
-
-<app-server></app-server>
-<app-server></app-server>
-<button [disabled]="!isEnable" (click)="handleClick()">Click Me</button>
-<p>{{targetElement}}</p>
-
-<input type="text" (input)="handleEvent($event)">
+<button (click)="handleClick()">Click me</button>
+<p *ngIf="isEnable ;else NoServer" >Thers is a server</p>
+<ng-template #NoServer>
+    <p>There is no server</p>
+</ng-template>
