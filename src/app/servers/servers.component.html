@@ -1,6 +1,0 @@
-<button (click)="handleClick()">Click me</button>
-<p *ngIf="isEnable ;else NoServer" >Thers is a server</p>
-<ng-template #NoServer>
-    <p>There is no server</p>
-</ng-template>
-<app-server *ngFor="let server of nameServers"></app-server>
