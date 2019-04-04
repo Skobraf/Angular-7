@@ -6,17 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
-  targetElement = 'hello';
-  isEnable = false;
+  nameServer = 'server';
+  nameServers = ['server1', 'server2'];
+
   constructor() { 
   }
 
   ngOnInit() {
   }
-  handleClick() {
-    this.isEnable = true;
+  const handleClick = () => {
+    this.nameServers.push(this.nameServer);
   }
-  handleEvent(event) {
-    this.targetElement = event.target.value;
-  }
+
+
 }
