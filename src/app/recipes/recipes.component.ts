@@ -8,7 +8,7 @@ import { Recipe } from './recipe.model';
   styleUrls: ['./recipes.component.css'],
   providers: [RecipeService]
 })
-export class RecipesComponent implements OnInit, DoCheck {
+export class RecipesComponent implements OnInit {
   selectedRecipe: Recipe;
   constructor(private recipeService: RecipeService ) {
     this.recipeService.recipeSelected.subscribe(
