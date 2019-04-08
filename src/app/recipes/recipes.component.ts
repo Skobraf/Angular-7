@@ -1,5 +1,6 @@
 import { RecipeService } from './recipe.service';
-import { Component, OnInit, DoCheck} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Recipe } from './recipe.model';
 
 @Component({
   selector: 'app-recipes',
@@ -8,16 +9,17 @@ import { Component, OnInit, DoCheck} from '@angular/core';
   providers: [RecipeService]
 })
 export class RecipesComponent implements OnInit, DoCheck {
-  selectedRecipe;
-  constructor() {
-    console.log(this.selectedRecipe);
+  selectedRecipe: Recipe;
+  constructor(private recipeService: RecipeService ) {
+    this.recipeService.recipeSelected.subscribe(
+      (recipe: Recipe) => {
+        // recipe value comes with the event
+        this.selectedRecipe = recipe;
+      }
+    )   
   }
 
   ngOnInit() {
-  }
-  ngDoCheck(): void {
-    console.log(this.selectedRecipe);
-    
   }
 
 }
